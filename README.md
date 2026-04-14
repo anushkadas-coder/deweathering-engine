@@ -1,5 +1,5 @@
 # 📄 Document Deweathering Engine
-
+[![Live Demo](https://img.shields.io/badge/demo-live_website-blue?style=for-the-badge&logo=vercel)](https://deweathering-engine.vercel.app)
 ![Project Demo](./assets/demo.jpeg)
 
 An unsupervised machine learning application designed to restore weathered, stained, or degraded documents. This project implements **Robust Principal Component Analysis (RPCA)** using the **Inexact Augmented Lagrange Multiplier (IALM)** algorithm with **Adaptive Regularization**.
