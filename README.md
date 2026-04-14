@@ -1,5 +1,5 @@
 # 📄 Document Deweathering Engine
-
+![Document Deweathering Demo](./assets/demo.jpeg)
 An unsupervised machine learning application designed to restore weathered, stained, or degraded documents. This project implements **Robust Principal Component Analysis (RPCA)** using the **Inexact Augmented Lagrange Multiplier (IALM)** algorithm.
 
 ## 🚀 The Core Engineering
@@ -24,4 +24,3 @@ $$\min_{A,E} \|A\|_* + \lambda \|E\|_1 \quad \text{s.t.} \quad A + E = D$$
    ```bash
    cd backend
    uvicorn main:app --reload
-   
