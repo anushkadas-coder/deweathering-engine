@@ -67,9 +67,15 @@ async def process_image(file: UploadFile = File(...)):
     nparr = np.frombuffer(contents, np.uint8)
     image = cv2.imdecode(nparr, cv2.IMREAD_GRAYSCALE)
     
-    # Standardize image size for consistent matrix math performance
-    # 500x700 is a good balance between detail and SVD speed
-    image = cv2.resize(image, (500, 700))
+    # --- DYNAMIC DOWNSAMPLING ---
+    # Downscale while preserving aspect ratio so text doesn't warp
+    max_dimension = 800
+    height, width = image.shape[:2]
+    if max(height, width) > max_dimension:
+        scale = max_dimension / max(height, width)
+        image = cv2.resize(image, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA)
+    # --------------------------------------
+
     D = image.astype(float) / 255.0
     
     # --- INTELLIGENT ADAPTIVE LOGIC ---
