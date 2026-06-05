@@ -632,7 +632,7 @@ export default function App() {
     const fd = new FormData()
     fd.append('file', file)
     try {
-      const res = await fetch('https://deweathering-engine.onrender.com/process', { method: 'POST', body: fd })
+      const res = await fetch('https://deweathering-engine-xohp.onrender.com/process', { method: 'POST', body: fd })
       if (res.ok) setResult(URL.createObjectURL(await res.blob()))
       else alert('Backend error. Ensure the FastAPI server is running.')
     } catch { alert('Connection failed. Check your server.') }
@@ -900,7 +900,7 @@ export default function App() {
                 </div>
               )}
               <div className="statusbar-item ml">
-                <span>deweathering-engine.onrender.com</span>
+                <span>deweathering-engine-xohp.onrender.com</span>
               </div>
             </div>
           </div>
