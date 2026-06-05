@@ -69,7 +69,7 @@ async def process_image(file: UploadFile = File(...)):
     
     # --- DYNAMIC DOWNSAMPLING ---
     # Downscale while preserving aspect ratio so text doesn't warp
-    max_dimension = 800
+    max_dimension = 300
     height, width = image.shape[:2]
     if max(height, width) > max_dimension:
         scale = max_dimension / max(height, width)
