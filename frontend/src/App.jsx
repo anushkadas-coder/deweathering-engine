@@ -585,6 +585,47 @@ const css = `
   .statusbar-item.ml { margin-left: auto; }
 
   .status-ok { color: var(--green); }
+
+  /* ── MOBILE RESPONSIVE FIXES ── */
+  @media (max-width: 850px) {
+    .main {
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .workspace {
+      display: flex;
+      flex-direction: column;
+      overflow-y: visible;
+    }
+    .panel {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      min-height: 400px;
+    }
+    .toolbar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+    }
+    .toolbar-left {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .statusbar {
+      flex-wrap: wrap;
+      height: auto;
+      padding: 12px 24px;
+      gap: 12px;
+    }
+    .statusbar-item.ml {
+      margin-left: 0;
+    }
+  }
 `
 
 const IconUpload = () => (
